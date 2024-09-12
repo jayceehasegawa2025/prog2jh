@@ -6,7 +6,7 @@ const mockUrls = [
 "https://utfs.io/f/a46038db-428e-4124-9a73-ad2d0329291a-1ta9k.jpg",
 "https://utfs.io/f/5d8e35a8-16a7-40c3-a4fb-574712927e3c-b3dzdh.jpg",
 "https://utfs.io/f/386224fe-11ca-43b6-9f92-200b17442d15-1r5ov0.jpg",
-"https://utfs.io/f/be3a7841-0376-44c2-a9f2-d16325b4a03d-23ti.jpg"
+"https://utfs.io/f/be3a7841-0376-44c2-a9f2-d16325b4a03d-23ti.jpg",
 ];
 
 const mockImages = mockUrls.map((url, index) => ({
@@ -14,7 +14,7 @@ const mockImages = mockUrls.map((url, index) => ({
   id: index + 1,
 }))
 
-export default function HomePage() {
+/*export default function HomePage() {
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
@@ -32,18 +32,19 @@ export default function HomePage() {
     </main>
   );
 }
+  */
 
 
-// export default function HomePage() {
-//   return (
-//     <main className="">
-//       <div className="flex flex-wrap gap-4">
-//         {mockImages.map((image) => (
-//           <div key={image.id} className="w-48">
-//             <img src={image.url} />
-//           </div>
-//         ))}
-//       </div>
-//     </main>
-//   );
-// }
+export default function HomePage() {
+   return (
+     <main className="">
+       <div className="flex flex-wrap gap-4">
+         {mockImages.map((image) => (
+           <div key={image.id} className="w-48">
+             <img src={image.url} />
+           </div>
+         ))}
+       </div>
+     </main>
+   );
+ }
