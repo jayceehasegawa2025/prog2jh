@@ -14,37 +14,37 @@ const mockImages = mockUrls.map((url, index) => ({
   id: index + 1,
 }))
 
-/*export default function HomePage() {
-  return (
-    <main className="">
-      <div className="flex flex-wrap gap-4">
-        {mockImages.map((image) => (
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <div className="card-body">
-              <h2 className="card-title">{image.id}</h2>
-            </div>
-            <figure>
+   export default function HomePage() {
+    return (
+      <main className="">
+        <div className="flex flex-wrap gap-4">
+          {mockImages.map((image) => (
+            <div key={image.id} className="w-48">
               <img src={image.url} />
-            </figure>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
-}
-  */
-
-
-export default function HomePage() {
-   return (
-     <main className="">
-       <div className="flex flex-wrap gap-4">
-         {mockImages.map((image) => (
-           <div key={image.id} className="w-48">
-             <img src={image.url} />
-           </div>
-         ))}
-       </div>
-     </main>
-   );
+            </div>
+          ))}
+        </div>
+      </main>
+    );
  }
+
+ 
+// export default function HomePage() {
+//    return (
+//      <main className="">
+//        <div className="flex flex-wrap gap-4">
+//          {mockImages.map((image) => (
+//            <div key={image.id} className="w-48">
+//                <div className="card bg-base-100 w-96 shadow-xl">
+//                   <div className="card-body">
+//                     <h2 className="card-title">{image.id}</h2>
+//                   </div>
+//                   <figure>
+//                     <img src={image.url} />
+//                   </figure>
+//                 </div>
+//            </div>
+//          ))}
+//        </div>
+//      </main>
+//    );
