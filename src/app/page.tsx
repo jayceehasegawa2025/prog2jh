@@ -15,40 +15,43 @@ import { db } from "~/server/db"
 //   id: index + 1,
 // }))
 
-   export default async function HomePage() {
-    const images = await db.query.images.findMany()
+//    export default async function HomePage() {
+//     const images = await db.query.images.findMany()
     
-    return (
-      <main className="">
-        <div className="flex flex-wrap gap-4">
-          {images.map((image) => (
-            <div key={image.id} className="w-48">
-              <img src={image.url} />
-              <div>{image.name}</div>
-            </div>
-          ))}
-        </div>
-      </main>
-    );
- }
+//     return (
+//       <main className="">
+//         <div className="flex flex-wrap gap-40">
+//           {images.map((image) => (
+//             <div key={image.id} className="w-48">
+//               <img src={image.url} className="w-48 h-48"/>
+//               <div>{image.name}</div>
+//             </div>
+//           ))}
+//         </div>
+//       </main>
+//     );
+//  }
 
  
-// export default function HomePage() {
-//    return (
-//      <main className="">
-//        <div className="flex flex-wrap gap-4">
-//          {mockImages.map((image) => (
-//            <div key={image.id} className="w-48">
-//                <div className="card bg-base-100 w-96 shadow-xl">
-//                   <div className="card-body">
-//                     <h2 className="card-title">{image.id}</h2>
-//                   </div>
-//                   <figure>
-//                     <img src={image.url} />
-//                   </figure>
-//                 </div>
-//            </div>
-//          ))}
-//        </div>
-//      </main>
-//    );
+export default async function HomePage() {
+  const images = await db.query.images.findMany()
+
+   return (
+     <main className="">
+       <div className="flex flex-wrap gap-4">
+         {images.map((image) => (
+           <div key={image.id} className="w-48">
+               <div className="card bg-base-100 w-70 shadow-xl">
+                  <div className="card-body">
+                    <h2 className="card-title">{image.id}</h2>
+                  </div>
+                  <figure>
+                    <img src={image.url} className="w-48 h-48" />
+                  </figure>
+                </div>
+           </div>
+         ))}
+       </div>
+     </main>
+   );
+  }
