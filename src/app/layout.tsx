@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import UploadThingButton from "./_components/button"
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -24,6 +25,7 @@ export default function RootLayout({
             </SignedOut>
             <SignedIn>
               <UserButton />
+              <UploadThingButton />
             </SignedIn>
           </header>
           <main>{children}</main>
