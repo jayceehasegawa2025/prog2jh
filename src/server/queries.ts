@@ -2,7 +2,16 @@ import "server-only";
 import { db } from "./db";
 import { auth } from "@clerk/nextjs/server";
 
-export async function getMyImages(): Promise<any[] | null> {
+type Image = {
+    id: number;
+    name: string;
+    url: string;
+    userId: string;
+    createdAt: Date;
+    updatedAt: Date | null;
+}
+
+export async function getMyImages(): Promise<Image[] | null> {
     const user = (await auth());
     
     if(!user.userId){
